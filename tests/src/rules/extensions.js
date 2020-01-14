@@ -443,5 +443,16 @@ ruleTester.run('extensions', rule, {
         },
       ],
     }),
+    test({
+      code: 'import afterpayInfo from "~images/afterpay-info.svg?inline";',
+      options: [ 'never', { svg: 'always' } ],
+      errors: [
+        {
+          message: 'Missing file extension for "~images/social/facebook.svg?inline"',
+          line: 1,
+          column: 30,
+        },
+      ],
+    }),
   ],
 })

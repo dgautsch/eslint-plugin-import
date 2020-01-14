@@ -20,6 +20,7 @@
     "postbuild": "npm run copy-metafiles",
     "copy-metafiles": "for DIR in memo-parser resolvers/node resolvers/webpack utils; do cp LICENSE .npmrc \"${DIR}/\"; done",
     "watch": "npm run mocha -- --watch tests/src",
+    "test:debug": "npm run mocha -- --watch --inspect-brk tests/src/rules/extensions.js",
     "pretest": "linklocal",
     "posttest": "eslint .",
     "mocha": "cross-env BABEL_ENV=test NODE_PATH=./src nyc -s mocha -R dot --recursive -t 5s",
